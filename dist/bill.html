@@ -1,0 +1,125 @@
+<!doctype html><html><head><meta charset=utf-8><title>搜航网“算积分，赢话费”有奖活动</title><meta name=viewport content="width=640,user-scalable=no"><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=black><link href=css/bill.css rel=stylesheet><script type=text/javascript src=http://res.wx.qq.com/open/js/jweixin-1.0.0.js></script><script src=js/jq/jquery-2.1.4.min.js></script><script>
+
+// var path='__URL__/bill?action=billSaveLog&act_event';
+// var path2='__URL__/bill?action=billSaveScore';
+// var path3='__URL__/bill?action=billMobilerIs';
+
+// $.post(path+"=1",{},function(msg){
+                                
+// },'json');
+
+
+
+// $.post(path3,{},function(dd){
+//     if(dd.status==1){
+//         window.alert(dd.info);
+//         window.location.href=dd.data;
+//     }                          
+// },'json');
+
+// var over_time=new Date();
+
+
+// if(over_time.getMonth()==7&&over_time.getDate()>=27){
+   
+// }else if(over_time.getDate()==8&&over_time.getDate()<=8){
+
+// }else if(over_time.getDate()==8&&over_time.getDate()==8&&over_time.getHours()<=10){
+
+// }else{
+//     window.alert("非常抱歉，本活动已经结束");
+//     window.location.href="http://www.sofreight.com/Static/Weixin/bill.html?sort";
+// }
+
+
+
+wx.config({
+    debug:false, 
+    appId:'{$appId}', 
+    timestamp:'{$timestamp}', 
+    nonceStr:'{$nonceStr}', 
+    signature:'{$signature}',
+    jsApiList:['onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo','onMenuShareQZone'] 
+});
+
+
+wx.ready(function(){
+    wx.onMenuShareTimeline({
+        title:'搜航网“算积分，赢话费”有奖活动，只有一道题~~', 
+        link:'http://www.sofreight.com/Static/Weixin/bill.html', 
+        imgUrl:'http://www.sofreight.com/resource/wx/images/bill.jpg', 
+        success: function () { 
+            
+        },
+        cancel: function () { 
+           
+        }
+    });
+
+    wx.onMenuShareAppMessage({
+        title: '搜航网“算积分，赢话费”有奖活动，只有一道题~~', 
+        desc: '我参加了搜航网“算积分，赢话费”活动，答对一道题就有可能赢得百元话费。', 
+        link: 'http://www.sofreight.com/Static/Weixin/bill.html', 
+        imgUrl: 'http://www.sofreight.com/resource/wx/images/bill.jpg', 
+        type: '',
+        dataUrl: '', 
+        success: function () { 
+            
+        },
+        cancel: function () { 
+           
+        }
+    });
+    wx.onMenuShareQQ({
+        title: '搜航网“算积分，赢话费”有奖活动，只有一道题~~', 
+        desc: '我参加了搜航网“算积分，赢话费”活动，答对一道题就有可能赢得百元话费。', 
+        link: 'http://www.sofreight.com/Static/Weixin/bill.html', 
+        imgUrl: 'http://www.sofreight.com/resource/wx/images/bill.jpg', 
+        success: function () { 
+           
+        },
+        cancel: function () { 
+           
+        }
+    });
+    wx.onMenuShareWeibo({
+        title: '搜航网“算积分，赢话费”有奖活动，只有一道题~~', 
+        desc: '我参加了搜航网“算积分，赢话费”活动，答对一道题就有可能赢得百元话费。', 
+        link: 'http://www.sofreight.com/Static/Weixin/bill.html',
+        imgUrl: 'http://www.sofreight.com/resource/wx/images/bill.jpg', 
+        success: function () { 
+           
+        },
+        cancel: function () { 
+            
+        }
+    });
+    wx.onMenuShareQZone({
+        title: '搜航网“算积分，赢话费”有奖活动，只有一道题~~', 
+        desc: '我参加了搜航网“算积分，赢话费”活动，答对一道题就有可能赢得百元话费。', 
+        link: 'http://www.sofreight.com/Static/Weixin/bill.html', 
+        imgUrl: 'http://www.sofreight.com/resource/wx/images/bill.jpg', 
+        success: function () { 
+           
+        },
+        cancel: function () { 
+            
+        }
+    });
+});
+
+wx.error(function(res){
+    
+    
+});
+
+</script></head><body><div class="start page" id=start><div class=meteor></div><div class=circle><span></span> <span></span></div><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207281749&idx=1&sn=587077eea8f0a92be70e844505722c83#rd" target=_blank class=logo></a><div class=theme></div><div class=bill><span></span> <span></span> <span></span></div><div class=person></div><div class=money></div><div class=bo-bg><span class=start-btn></span> <em><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207675117&idx=1&sn=670963c18b14a306cc1a489834d7c907#rd" target=_blank>搜航网</a>｜领先的海运订舱平台</em></div></div><div class="answer page" id=answer><div class=circle></div><div class=meteor></div><div class=rule></div><audio controls id=audio><source src=__PUBLIC__/wx/vedio/clock.mp3 type=audio/mpeg>Your browser does not support the audio element.</audio><div class=bo-bg><div class=blackboard><div class=clock><em></em><span>00:00:00</span></div><p>假设您订舱应支付海运费USD<cite>60</cite> ，附加费CNY<em>2000</em>，现有<strong>2000</strong>积分，请问抵扣后需要支付多少？</p></div><div class=ans><ul class=ans-list><li><label>USD</label><p><input id=usd type=number placeholder=请输入答案><cite>并没有填写答案哦</cite></p></li><li><label>CNY</label><p><input id=cny type=number placeholder=请输入答案><cite>并没有填写答案哦</cite></p></li></ul><span></span> <em><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207675117&idx=1&sn=670963c18b14a306cc1a489834d7c907#rd" target=_blank>搜航网</a>｜领先的海运订舱平台</em></div></div></div><div class="sort page" id=sort><div class=meteor></div><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207281749&idx=1&sn=587077eea8f0a92be70e844505722c83#rd" target=_blank class=logo></a><div class=time><span>您用时: <em>88:88:88</em></span><span>排名：<em>第7名</em></span></div><div class=brand><div class=brand-cen><dl class=brand-list><dt><p>名次</p><p>用户名</p><p>答题时间</p></dt><dd><p><em></em></p><p>errwer</p><p>00:15:992</p></dd><dd><p><em></em></p><p>yuert</p><p>01:35:759</p></dd><dd><p><em></em></p><p>wer</p><p>01:45:714</p></dd><dd><p><em>4</em></p><p>dfgher</p><p>02:30:832</p></dd><dd><p><em>5</em></p><p>wteyr</p><p>02:38:644</p></dd><dd><p><em>6</em></p><p>dsada</p><p>02:44:532</p></dd><dd><p><em>7</em></p><p>dghet</p><p>02:46:530</p></dd></dl></div></div><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207675117&idx=1&sn=670963c18b14a306cc1a489834d7c907#rd" target=_blank class=atten>关注搜航网，随时查询排名 ></a><div class=money></div><div class=bo-bg><span></span></div></div><div class="info page" id=info><div class=lian></div><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207281749&idx=1&sn=587077eea8f0a92be70e844505722c83#rd" target=_blank class=logo></a><div class=text1>为了统计排名并准确联系到您以发放奖品，请完善以下信息。搜航网一向尊重客户隐私，不会挪作他用。</div><div class=sub><ul class=sub-list><li><label>* 您的昵称</label><input placeholder=请填写您的昵称><cite>请填写您的昵称</cite></li><li><label>手机号码</label><input placeholder=请填写手机号码 type=number><cite>手机号码格式不对</cite></li></ul></div><div class=i-text>您可继续提交，但如不填手机号，视为自动放弃获奖资格哦。</div><div class=money></div><div class=bill><span></span> <span></span> <span></span></div><div class=bo-bg><span></span> <em><a href="http://mp.weixin.qq.com/s?__biz=MjM5NzI4ODkwMA==&mid=207675117&idx=1&sn=670963c18b14a306cc1a489834d7c907#rd" target=_blank>搜航网</a>｜领先的海运订舱平台</em></div></div><div class=img><div class=img01></div><div class=img02></div><div class=img03></div><div class=img05></div><div class=img06></div><div class=img07></div><div class=img08></div><div class=img09></div><div class=img10></div><div class=img11></div><div class=img12></div><div class=img13></div></div><div class=welcome id=welcome></div><div class=spinner id=spinner><div class=bounce1></div><div class=bounce2></div><div class=bounce3></div></div><script src=js/bill.js></script><script type=text/javascript>
+var b=new Bill();
+b.init({
+    start:'#start',
+    answer:'#answer',
+    sort:'#sort',
+    info:"#info"
+});
+
+</script></body></html>
