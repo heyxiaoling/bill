@@ -143,27 +143,31 @@ Bill.prototype._down=function(){
     bd.append(_msg);
 
     var mask=$('#mask'),msg=$('#down');
-
-    setTimeout(function(){
+    var s=new TimeLine();
+    s.add(600,function(){
     	msg.append("<span class='span2'></span>");
-    },600);
-    setTimeout(function(){
-    	msg.append("<span class='span3'></span>");
-    },1200);
+    },'2');
 
-	setTimeout(function(){
-		mask.remove();
+    s.add(1200,function(){
+    	msg.append("<span class='span3'></span>");
+    },'3');
+
+    s.add(1600,function(){
+    	mask.remove();
 		msg.remove();
 		_this.sta.addClass('startout');
-	},1600);
+    },'4');
 
-	setTimeout(function(){
-		_this.sta.css({'visibility':'hidden'});
+    s.add(3200,function(){
+    	_this.sta.css({'visibility':'hidden'});
 		_this.ans.css({'visibility':'visible'}).addClass('answerin');
-	},3200);
-	setTimeout(function(){
-		_this._answer();
-	},4400);
+    },'5');
+
+    s.add(4400,function(){
+    	_this._answer();
+    },'6');
+	
+	s.start();
 }
 
 Bill.prototype._answer=function(){
@@ -787,4 +791,33 @@ function checkMobile(str){
     }else{
        return false;
     }
+}
+
+
+function TimeLine(){
+	this.order=[];	
+}
+
+TimeLine.prototype.add=function(timeout,func,log){
+	this.order.push({
+		timeout:timeout,
+		func:func,
+		log:log
+	});
+}
+
+TimeLine.prototype.start=function(ff){
+	for(s in this.order){
+		(function(me){
+			var timeout=me.timeout;
+			var fn=me.func;
+			var log=me.log;
+			timeout=Math.max(timeout-(ff||0),0)
+			setTimeout(fn,timeout);
+			setTimeout(function(){
+				console.log('time->',timeout,"log->",log);
+			},timeout);
+
+		})(this.order[s]);
+	}
 }
